@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import * as THREE from "three";
+import resume from './Resume.pdf';
 
 const About = () => {
     const canvasRef = useRef(null);
@@ -121,7 +122,8 @@ const About = () => {
                     </div>
                 </motion.div>
                 <a
-                    href="/assets/Resume.pdf" // Correct path to your resume file
+                    href={resume}
+                    download='resume'
                     target="_blank"
                     rel="noopener noreferrer"
                     className="border-green-500 p-2 bg-green-500 text-xl font-semibold rounded-lg px-4 sm:mt-6 cursor"

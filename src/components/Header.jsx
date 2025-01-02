@@ -2,6 +2,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom';
 import { useState } from 'react';
+import resume from './Resume.pdf';
 function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -107,7 +108,8 @@ function Header() {
                                                 className="hidden xl:block font-semibold text-xl"
                                             >
                                                 <a
-                                                    href="/assets/Resume.pdf"
+                                                    href={resume}
+                                                    download='resume'
                                                     target="_blank"
                                                     rel="noopener noreferrer"
                                                     className='ml-16 2xl:ml-24 bg-green-600 p-2 rounded-lg'>

@@ -1,0 +1,32 @@
+body{
+  background-color: black;
+  color: white;
+}
+
+.bg{
+  background-color: rgba(91, 83, 83, 0.249);
+  color: white;
+}
+
+.style1{
+  clip-path: polygon(0% 0%, 100% 0%, 88% 100%, 0% 100%);
+}
+.style2{
+  clip-path: polygon(5% 0%, 100% 0%, 100% 100%, 0% 100%);
+}
+
+
+video{
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.border{
+  border-top: 1px solid green;
+}
+
+
+.cursor{
+  cursor: pointer;
+}

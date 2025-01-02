@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import * as THREE from "three";
-import resume from '../assets/resume.pdf';
+import resume from '../assets/Resume.pdf';
 
 const About = () => {
     const canvasRef = useRef(null);

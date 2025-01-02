@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import * as THREE from "three";
-import resume from './Resume.pdf';
+import resume from '../assets/resume.pdf';
 
 const About = () => {
     const canvasRef = useRef(null);
@@ -121,11 +121,11 @@ const About = () => {
                         </p>
                     </div>
                 </motion.div>
-                <button>
+                <button className="mt-6">
                     <a
                         href={resume}
                         download='resume'
-                        className="border-green-500 p-2 bg-green-500 text-xl font-semibold rounded-lg px-4 sm:mt-6 cursor"
+                        className="border-green-500 p-2 bg-green-500 text-xl font-semibold rounded-lg px-4 sm:mt-6  cursor"
                     >
                         My Resume
                     </a>

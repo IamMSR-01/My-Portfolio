@@ -1,25 +1,23 @@
 import React, { useRef, useEffect } from "react";
-import emailjs from "emailjs-com";
 import { motion } from "framer-motion";
 import * as THREE from "three";
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
   const canvasRef = useRef(null);
-  const formRef = useRef(null);
+  const formRef = useRef();
 
   const sendEmail = (e) => {
     e.preventDefault();
 
     emailjs
       .sendForm(
-        "service_itpjvvo", // Replace with your Email.js Service ID
-        "template_706zso7", // Replace with your Email.js Template ID
-        formRef.current,
-        "bwAVHyO6PEReFDdXB" // Replace with your Email.js User ID
+        'service_itpjvvo','template_xz92qml',formRef.current,'xDvyAmv7D1Eg7hkBT'
       )
       .then(
         (result) => {
           alert("Email Sent Successfully!");
+          console.log(result.text);
         },
         (error) => {
           alert("Failed to Send Email. Please Try Again.");
@@ -134,9 +132,8 @@ const Contact = () => {
                 <input
                   type="text"
                   placeholder="Enter your name"
-                  name="name"
+                  name="user_name"
                   className="w-full placeholder:text-gray-400 p-4 rounded-md bg-gray-800 text-white focus:outline-none"
-                  required
                 />
               </div>
               <div className="mb-4">
@@ -144,8 +141,7 @@ const Contact = () => {
                   type="email"
                   placeholder="Enter your email"
                   className="w-full placeholder:text-gray-400 p-4 rounded-md bg-gray-800 text-white focus:outline-none"
-                  required
-                  name="email"
+                  name="user_email"
                 />
               </div>
               <div className="mb-4">
@@ -154,11 +150,11 @@ const Contact = () => {
                   placeholder="Enter your message"
                   rows="5"
                   className="w-full h-60 p-4 placeholder:text-gray-400 rounded-md bg-gray-800 text-white focus:outline-none"
-                  required
                 ></textarea>
               </div>
               <button
                 type="submit"
+                value="Send"
                 className="w-full p-3 bg-green-500 text-white rounded-md hover:bg-green-600 transition-all"
               >
                 Send Message

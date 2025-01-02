@@ -2,7 +2,6 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom';
 import { useState } from 'react';
-import resume from './Resume.pdf';
 function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -22,7 +21,7 @@ function Header() {
                         </div>
                     </NavLink>
                 </div>
-                <div className='bg text-white w-[100%] xl:style2 xl:w-[70%] xl:rounded-xl'>
+                <div className='bg text-white w-[100%] style2 xl:w-[70%] xl:rounded-xl items-end justify-items-end'>
                     <nav className="p-1 md:p-4">
                         <div className="max-w-7xl mx-auto px-2 sm:px-6 xl:px-8 ">
                             <div className="relative flex items-center justify-between h-16">
@@ -53,7 +52,7 @@ function Header() {
                                         </svg>
                                     </button>
                                 </div>
-                                <div className="sm:ml-28 lg:ml-40 xl:ml-0 flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
+                                <div className="sm:ml-28 lg:ml-40 xl:ml-0 flex-1 flex sm:items-stretch sm:justify-start">
                                     <div className="hidden m-auto sm:block ">
                                         <div className="flex space-x-4 items-center justify-center w-full">
                                             <NavLink
@@ -104,18 +103,7 @@ function Header() {
                                             >
                                                 Contact
                                             </NavLink>
-                                            <NavLink
-                                                className="hidden xl:block font-semibold text-xl"
-                                            >
-                                                <a
-                                                    href={resume}
-                                                    download='resume'
-                                                    target="_blank"
-                                                    rel="noopener noreferrer"
-                                                    className='ml-16 2xl:ml-24 bg-green-600 p-2 rounded-lg'>
-                                                    My Resume
-                                                </a>
-                                            </NavLink>
+                                            
                                         </div>
                                     </div>
                                 </div>

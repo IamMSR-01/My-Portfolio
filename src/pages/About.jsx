@@ -124,8 +124,6 @@ const About = () => {
                 <a
                     href={resume}
                     download='resume'
-                    target="_blank"
-                    rel="noopener noreferrer"
                     className="border-green-500 p-2 bg-green-500 text-xl font-semibold rounded-lg px-4 sm:mt-6 cursor"
                 >
                     My Resume

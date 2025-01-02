@@ -26,19 +26,8 @@ video{
   border-top: 1px solid green;
 }
 
-html {
-  scroll-behavior: smooth;
+
+.cursor{
+  cursor: pointer;
 }
-
-/* Add to your CSS */
-.scroll-container {
-  overflow: hidden;
-  height: 870vh; 
-}
-
-.content {
-  height: 870vh;
-}
-
-
 

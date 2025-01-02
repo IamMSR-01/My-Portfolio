@@ -21,11 +21,11 @@ function Header() {
                         </div>
                     </NavLink>
                 </div>
-                <div className='bg text-white w-[100%] style2 xl:w-[70%] xl:rounded-xl items-end justify-items-end'>
+                <div className='bg text-white w-full xl:w-[70%] xl:rounded-xl items-end justify-items-end'>
                     <nav className="p-1 md:p-4">
                         <div className="max-w-7xl mx-auto px-2 sm:px-6 xl:px-8 ">
                             <div className="relative flex items-center justify-between h-16">
-                                <div className="absolute inset-y-0 flex items-center xl:hidden justify-between">
+                                <div className="absolute inset-y-0 flex items-center justify-between xl:hidden">
                                     <a href="/">
                                         <img className='w-10' src="portfolio-profile-pic.png" alt="" />
                                     </a>

@@ -121,13 +121,15 @@ const About = () => {
                         </p>
                     </div>
                 </motion.div>
-                <a
-                    href={resume}
-                    download='resume'
-                    className="border-green-500 p-2 bg-green-500 text-xl font-semibold rounded-lg px-4 sm:mt-6 cursor"
-                >
-                    My Resume
-                </a>
+                <button>
+                    <a
+                        href={resume}
+                        download='resume'
+                        className="border-green-500 p-2 bg-green-500 text-xl font-semibold rounded-lg px-4 sm:mt-6 cursor"
+                    >
+                        My Resume
+                    </a>
+                </button>
             </div>
         </section>
     );

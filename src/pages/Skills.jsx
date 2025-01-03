@@ -89,7 +89,7 @@ const Skills = () => {
         >
           Professional Skills
         </motion.h2>
-        <div className="lg:w-[85%] mt-20 m-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 xl:grid-cols-6 gap-4">
+        <div className="lg:w-[85%] mt-20 m-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-6 gap-4">
           {skills.map((skill, index) => (
             <motion.div
               key={index}

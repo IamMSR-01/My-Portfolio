@@ -60,7 +60,7 @@ const About = () => {
     return (
         <section
             id="about"
-            className="relative mt-10 bg-black sm:pb-14 text-white overflow-x-hidden overflow-y-hidden"
+            className="relative mt-10 bg-black sm:pb-14 mb-8 text-white overflow-x-hidden overflow-y-hidden"
         >
             {/* Three.js Background */}
             <canvas

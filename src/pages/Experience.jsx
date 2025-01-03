@@ -25,7 +25,7 @@ const experiences = [
 
 const Experience = () => {
   return (
-    <section id="experience" className="relative py-12 bg-black text-white overflow-hidden">
+    <section id="experience" className="relative py-16 mt-6 pb-16 bg-black text-white overflow-hidden">
       {/* Three.js Animation */}
       <Canvas className="absolute inset-0 z-0">
         <ambientLight intensity={0.5} />

@@ -69,7 +69,7 @@ const About = () => {
             ></canvas>
 
             {/* Content */}
-            <div className="relative z-10 flex flex-col items-center container mx-auto text-center">
+            <div className="relative z-10 mt-5 flex flex-col items-center container mx-auto text-center">
                 <motion.h2
                     className="text-6xl mt-10 font-bold mb-6 text-green-500"
                     initial={{ opacity: 0, y: -50 }}

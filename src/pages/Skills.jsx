@@ -8,18 +8,18 @@ const Skills = () => {
   const canvasRef = useRef(null);
 
   const skills = [
-    { name: "HTML", icon: <FaHtml5 />, color: "#e34f26", proficiency: 90 },
-    { name: "CSS", icon: <FaCss3Alt />, color: "#1572b6", proficiency: 80 },
-    { name: "JavaScript", icon: <FaJsSquare />, color: "#f0db4f", proficiency: 70 },
-    { name: "React.js", icon: <FaReact  />, color: "#61dbfb", proficiency: 75 },
-    { name: "Node.js", icon: <FaNodeJs />, color: "#339933", proficiency: 65 },
-    { name: "Tailwind CSS", icon: <SiTailwindcss />, color: "#38bdf8", proficiency: 85 },
-    { name: "C", icon: <img className="w-10" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/C_Programming_Language.svg/1853px-C_Programming_Language.svg.png" alt="" />, color: "#274FA8", proficiency: 60 },
-    { name: "C++", icon: <img className="w-10 " src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/ISO_C%2B%2B_Logo.svg/911px-ISO_C%2B%2B_Logo.svg.png" alt="" />, color: "#0081CC", proficiency: 70 },
-    { name: "Python", icon: <img className="w-10" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1869px-Python-logo-notext.svg.png" alt="" />, color: "#859CFB", proficiency: 80 },
-    { name: "Java", icon: <img className="w-10" src="https://wallpapers.com/images/hd/java-programming-language-logo-transparent-k6ngrbl1m2xbzz4t-2.jpg" alt="" />, color: "#0878BF", proficiency: 65 },
-    { name: "Figma", icon: <img className="w-10" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Figma-logo.svg/1667px-Figma-logo.svg.png" alt="" /> , color: "red", proficiency: 65 },
-    { name: "Git", icon: <FaGitAlt />, color: "#D74A34", proficiency: 65 },
+    { name: "HTML", icon: <FaHtml5 />, color: "#e34f26" },
+    { name: "CSS", icon: <FaCss3Alt />, color: "#1572b6" },
+    { name: "JavaScript", icon: <FaJsSquare />, color: "#f0db4f"},
+    { name: "React.js", icon: <FaReact  />, color: "#61dbfb"},
+    { name: "Node.js", icon: <FaNodeJs />, color: "#339933" },
+    { name: "Tailwind CSS", icon: <SiTailwindcss />, color: "#38bdf8" },
+    { name: "C", icon: <img className="w-10" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/C_Programming_Language.svg/1853px-C_Programming_Language.svg.png" alt="" />, color: "#274FA8" },
+    { name: "C++", icon: <img className="w-10 " src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/ISO_C%2B%2B_Logo.svg/911px-ISO_C%2B%2B_Logo.svg.png" alt="" />, color: "#0081CC" },
+    { name: "Python", icon: <img className="w-10" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1869px-Python-logo-notext.svg.png" alt="" />, color: "#859CFB" },
+    { name: "Java", icon: <img className="w-10" src="https://wallpapers.com/images/hd/java-programming-language-logo-transparent-k6ngrbl1m2xbzz4t-2.jpg" alt="" />, color: "#0878BF" },
+    { name: "Figma", icon: <img className="w-8" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Figma-logo.svg/1667px-Figma-logo.svg.png" alt="" /> , color: "red" },
+    { name: "Git", icon: <FaGitAlt />, color: "#D74A34" },
   ];
 
   useEffect(() => {
@@ -89,11 +89,11 @@ const Skills = () => {
         >
           Professional Skills
         </motion.h2>
-        <div className="lg:w-[85%] mt-20 m-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-8">
+        <div className="lg:w-[85%] mt-20 m-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 xl:grid-cols-6 gap-4">
           {skills.map((skill, index) => (
             <motion.div
               key={index}
-              className="bg flex flex-col items-center text-center p-6 bg-transparent shadow-xl rounded-lg transform hover:scale-105 transition-all duration-300 relative group"
+              className="bg flex flex-col items-center text-center p-4 bg-transparent shadow-xl rounded-lg transform hover:scale-105 transition-all duration-300 relative group"
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.3 }}
             >
@@ -107,17 +107,6 @@ const Skills = () => {
                 {skill.icon}
               </div>
               <h3 className="text-lg font-semibold text-white">{skill.name}</h3>
-              <p className="text-sm text-gray-400">Expert</p>
-              <div className="relative w-full mt-2">
-                <div
-                  className="h-2 bg-gray-700 rounded-full"
-                  style={{ width: `${skill.proficiency}%` }}
-                ></div>
-                <div className="absolute top-0 right-0 text-xs text-gray-300">
-                  {skill.proficiency}%
-                </div>
-              </div>
-              <div className="absolute inset-0 border-4 border-transparent rounded-lg group-hover:animate-neon-border"></div>
             </motion.div>
           ))}
         </div>

@@ -33,7 +33,7 @@ function Header() {
         </div>
 
         {/* desktop nav bar */}
-        <nav className="hidden mr-10 text-blue-500 md:flex space-x-6 text-xl font-semibold">
+        <nav className="hidden mr-10 text-blue-500 sm:flex space-x-2 lg:space-x-6 text-xl font-semibold">
           <motion.div>
             <NavLink to="/">Home</NavLink>
           </motion.div>

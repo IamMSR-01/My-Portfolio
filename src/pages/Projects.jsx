@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { FiGithub, FiExternalLink } from "react-icons/fi";
 import { TbBrandNextjs, TbBrandReact, TbBrandNodejs, TbBrandJavascript, TbBrandCss3, TbBrandHtml5, TbBrandMongodb } from "react-icons/tb";
+// import CustomCursor from "../components/CustomCursor.jsx"
 
 const projects = [
   {
@@ -35,6 +36,7 @@ const techIcons = [
 
 const Projects = () => {
   return (
+    
     <section className="relative py-20 bg-black overflow-hidden">
       {/* Floating Tech Logos (Background Animation) */}
       {techIcons.map((Icon, index) => (

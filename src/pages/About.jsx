@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import ResumePDF from "@/assets/Resume.pdf";
+// import CustomCursor from "../components/CustomCursor.jsx"
 
 function RotatingSphere() {
   const sphereRef = useRef();

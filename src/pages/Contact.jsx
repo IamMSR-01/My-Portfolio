@@ -2,6 +2,7 @@ import React, { useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 import * as THREE from "three";
 import emailjs from "@emailjs/browser";
+// import CustomCursor from "../components/CustomCursor.jsx"
 
 const Contact = () => {
   const canvasRef = useRef(null);
@@ -56,6 +57,7 @@ const Contact = () => {
   }, []);
 
   return (
+    
     <section className="relative w-full h-screen bg-gray-900 text-white overflow-hidden flex items-center justify-center">
       <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-blue-500 opacity-30 blur-3xl" />
       <canvas ref={canvasRef} className="absolute inset-0 w-full h-full" />

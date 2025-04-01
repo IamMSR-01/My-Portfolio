@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { FaPython, FaHackerrank } from "react-icons/fa";
+// import CustomCursor from "../components/CustomCursor.jsx"
 
 const experiences = [
   {
@@ -28,6 +29,7 @@ const experiences = [
 
 const Experience = () => {
   return (
+    
     <section className="py-20 bg-gradient-to-r from-black via-gray-900 to-black text-white">
       <motion.h2 
         initial={{ opacity: 0, y: -20 }}

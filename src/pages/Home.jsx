@@ -6,12 +6,14 @@ import Skills from './Skills';
 import Projects from './Projects';
 import Experience from './Experience';
 import Contact from './Contact';
+// import CustomCursor from "../components/CustomCursor.jsx"
 
 const roles = ["Full Stack Developer", "Backend Developer", "Frontend Developer", "Freelancer"];
 
 function Home() {
     return (
         <div>
+            {/* <CustomCursor /> */}
             <div className='flex h-[65vh] bg-gradient-to-r from-black via-gray-900 to-black sm:h-[98vh] text-white relative overflow-hidden'>
                 
                 <div className='absolute inset-0 animate-bgNoise opacity-20'></div>
@@ -67,9 +69,9 @@ function Home() {
                 {/* Right Side Middle Image */}
                 <div className="hidden lg:block absolute right-0 top-1/2 transform -translate-y-1/2 sm:right-20">
                     <img 
-                        src="https://images.pexels.com/photos/4974912/pexels-photo-4974912.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
+                        src="hero-image.jpg" 
                         alt="Shaqib" 
-                        className="w-24 sm:w-[500px] rounded-full border-2 border-white shadow-lg"
+                        className="w-24 sm:h-[420px]  sm:w-[450px] rounded-xl shadow-lg"
                     />
                 </div>
 

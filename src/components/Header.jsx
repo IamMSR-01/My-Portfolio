@@ -20,29 +20,38 @@ function Header() {
         {/* Logo Section */}
         <div className="text-white xl:w-[30%] flex items-center pl-5 font-bold text-2xl">
           <NavLink to="/home">
-            <motion.div whileHover={{ scale: 1.1 }} className="flex gap-5 items-center">
+            <motion.div
+              whileHover={{ scale: 1.1 }}
+              className="flex gap-5 items-center"
+            >
               <img className="w-16" src="profile-pic.png" alt="Profile" />
-              <h1 className="hidden text-blue-700 sm:block">Mohd Shaqib Raza</h1>
+              <h1 className="hidden text-blue-700 sm:block">
+                Mohd Shaqib Raza
+              </h1>
             </motion.div>
           </NavLink>
         </div>
 
-        {/* Desktop Navbar */}
+        {/* desktop nav bar */}
         <nav className="hidden mr-10 text-blue-500 md:flex space-x-6 text-xl font-semibold">
-          {["Home", "About", "Skills", "Projects", "Experience", "Contact"].map((item) => (
-            <motion.div
-              key={item}
-              whileHover={{ scale: 1.1 }}
-              className="hover:text-gray-300 transition"
-            >
-              <NavLink
-                to={`/${item.toLowerCase()}`}
-                className={({ isActive }) => (isActive ? "text-green-500" : "text-blue-700")}
-              >
-                {item}
-              </NavLink>
-            </motion.div>
-          ))}
+          <motion.div>
+            <NavLink to="/">Home</NavLink>
+          </motion.div>
+          <motion.div>
+            <NavLink to="about">About</NavLink>
+          </motion.div>
+          <motion.div>
+            <NavLink to="skills">Skills</NavLink>
+          </motion.div>
+          <motion.div>
+            <NavLink to="projects">Projects</NavLink>
+          </motion.div>
+          <motion.div>
+            <NavLink to="experience">Experience</NavLink>
+          </motion.div>
+          <motion.div>
+            <NavLink to="contact">Contact</NavLink>
+          </motion.div>
         </nav>
 
         {/* Mobile Menu Button */}
@@ -56,21 +65,25 @@ function Header() {
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="md:hidden bg-black/90 p-4 rounded-md mt-2 text-center">
-          {["Home", "About", "Skills", "Projects", "Experience", "Contact"].map((item) => (
-            <NavLink
-              key={item}
-              to={`/${item.toLowerCase()}`}
-              onClick={() => setIsMenuOpen(false)}
-              className={({ isActive }) =>
-                `block py-2 font-semibold text-xl transition duration-200 ${
-                  isActive ? "text-green-500" : "text-white"
-                }`
-              }
-            >
-              {item}
-            </NavLink>
-          ))}
+        <div className="md:hidden bg-black/10 p-4 rounded-md mt-2 text-center">
+          <motion.div>
+            <NavLink to="/">Home</NavLink>
+          </motion.div>
+          <motion.div>
+            <NavLink to="about">About</NavLink>
+          </motion.div>
+          <motion.div>
+            <NavLink to="skills">Skills</NavLink>
+          </motion.div>
+          <motion.div>
+            <NavLink to="projects">Projects</NavLink>
+          </motion.div>
+          <motion.div>
+            <NavLink to="experience">Experience</NavLink>
+          </motion.div>
+          <motion.div>
+            <NavLink to="contact">Contact</NavLink>
+          </motion.div>
         </div>
       )}
     </motion.div>

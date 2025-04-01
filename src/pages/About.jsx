@@ -45,7 +45,7 @@ function About() {
           transition={{ duration: 1 }}
         >
           <img 
-            src={"portfolio-profile-pic.png"} 
+            src={"profile-pic.png"} 
             alt="Profile" 
             className="w-24 h-24 sm:w-32 sm:h-32 mx-auto md:mx-0 rounded-full shadow-lg mb-4 border-4 border-purple-500"
           />

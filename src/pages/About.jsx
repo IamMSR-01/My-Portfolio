@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import { motion } from "framer-motion";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
-import ResumePDF from "@/assets/resume.pdf";
+import ResumePDF from "@/assets/Resume.pdf";
 
 function RotatingSphere() {
   const sphereRef = useRef();

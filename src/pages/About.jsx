@@ -1,138 +1,82 @@
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import { motion } from "framer-motion";
-import * as THREE from "three";
-import resume from '../assets/Resume.pdf';
+import { Canvas, useFrame } from "@react-three/fiber";
+import { OrbitControls } from "@react-three/drei";
+import ResumePDF from "@/assets/resume.pdf";
 
-const About = () => {
-    const canvasRef = useRef(null);
+function RotatingSphere() {
+  const sphereRef = useRef();
+  useFrame(() => {
+    if (sphereRef.current) {
+      sphereRef.current.rotation.y += 0.01;
+    }
+  });
+  return (
+    <mesh ref={sphereRef}>
+      <sphereGeometry args={[1.5, 32, 32]} />
+      <meshStandardMaterial color="#6c63ff" wireframe />
+    </mesh>
+  );
+}
 
-    useEffect(() => {
-        // Three.js Setup
-        const scene = new THREE.Scene();
-        const camera = new THREE.PerspectiveCamera(
-            75,
-            window.innerWidth / window.innerHeight,
-            0.1,
-            1000
-        );
-        const renderer = new THREE.WebGLRenderer({ canvas: canvasRef.current });
-        renderer.setSize(window.innerWidth, window.innerHeight);
+function About() {
+  return (
+    <section className="relative bg-black text-white py-20 px-6 sm:px-12" id="about">
+      {/* Background Animation */}
+      <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-blue-500 opacity-30 blur-3xl"></div>
 
-        // 3D Torus
-        const geometry = new THREE.TorusGeometry(5, 1, 16, 100);
-        const material = new THREE.MeshStandardMaterial({ color: 0x4caf50 });
-        const torus = new THREE.Mesh(geometry, material);
-        scene.add(torus);
+      <div className="relative container mx-auto flex flex-col md:flex-row items-center justify-between gap-10 md:gap-16">
+        {/* Left Side: 3D Model */}
+        <div className="w-full md:w-1/2 h-[300px] md:h-[400px] flex justify-center">
+          <Canvas>
+            <OrbitControls enableZoom={false} />
+            <ambientLight intensity={0.5} />
+            <directionalLight position={[2, 2, 2]} />
+            <RotatingSphere />
+          </Canvas>
+        </div>
 
-        // Lighting
-        const pointLight = new THREE.PointLight(0xffffff);
-        pointLight.position.set(5, 5, 5);
-        scene.add(pointLight);
-
-        const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
-        scene.add(ambientLight);
-
-        camera.position.z = 20;
-
-        const animate = () => {
-            requestAnimationFrame(animate);
-            torus.rotation.x += 0.01;
-            torus.rotation.y += 0.01;
-            renderer.render(scene, camera);
-        };
-
-        animate();
-
-        // Adjust on resize
-        const handleResize = () => {
-            renderer.setSize(window.innerWidth, window.innerHeight);
-            camera.aspect = window.innerWidth / window.innerHeight;
-            camera.updateProjectionMatrix();
-        };
-
-        window.addEventListener("resize", handleResize);
-
-        return () => {
-            window.removeEventListener("resize", handleResize);
-        };
-    }, []);
-
-    return (
-        <section
-            id="about"
-            className="relative mt-10 bg-black sm:pb-14 mb-8 text-white overflow-x-hidden overflow-y-hidden"
+        {/* Right Side: About Content */}
+        <motion.div 
+          className="w-full md:w-1/2 text-center md:text-left p-6 bg-white/10 backdrop-blur-md rounded-lg shadow-lg"
+          initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1 }}
         >
-            {/* Three.js Background */}
-            <canvas
-                ref={canvasRef}
-                className="absolute top-0 left-0 w-screen z-0 overflow-hidden"
-            ></canvas>
-
-            {/* Content */}
-            <div className="relative z-10 mt-5 flex flex-col items-center container mx-auto text-center">
-                <motion.h2
-                    className="text-6xl mt-10 font-bold mb-6 text-green-500"
-                    initial={{ opacity: 0, y: -50 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 1 }}
-                >
-                    About Me
-                </motion.h2>
-                <motion.p
-                    className="text-lg mb-8 text-gray-300"
-                    initial={{ opacity: 0, x: 50 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 1 }}
-                >
-                    <img className="w-40 sm:w-52 rounded-full" src="portfolio-profile-pic.png" alt="" />
-                </motion.p>
-                <motion.p
-                    className="text-lg mb-8 text-gray-300 p-3"
-                    initial={{ opacity: 0, x: -50 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 1 }}
-                >
-                    Hi, I’m Mohd Shaqib Raza, a dedicated frontend developer passionate about crafting responsive, <br /> user-friendly websites. I enjoy solving real-world problems through code and design, <br />continuously learning to enhance my skills. With a focus on clean design and seamless functionality, <br />I aim to create digital experiences that leave a lasting impact.
-                </motion.p>
-
-                <motion.div
-                    className="grid grid-cols-1 p-3 sm:grid-cols-2 gap-6"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: 0.5, duration: 1 }}
-                >
-                    <div className="bg p-6 rounded-lg shadow-lg hover:scale-105 transition-all">
-                        <h3 className="text-xl font-semibold mb-3 text-green-500">
-                            Web Development
-                        </h3>
-                        <p className="text-gray-400">
-                            I love building websites that are not just visually appealing but also functional <br />and user-friendly. For me, web development is about solving real problems <br />and creating seamless digital experiences.
-                            Crafting responsive and <br />interactive websites with modern frameworks and libraries.
-                        </p>
-                    </div>
-                    <div className="bg p-6 rounded-lg shadow-lg hover:scale-105 transition-all">
-                        <h3 className="text-xl font-semibold mb-3 text-green-500">
-                            Continuous Learning
-                        </h3>
-                        <p className="text-gray-400">
-                            Learning keeps me motivated! I’m always exploring new tools, technologies, and ideas <br />to grow as a developer. Every project teaches me something new, and <br />I’m excited to keep improving.
-                            Staying updated with the latest <br />technologies to create cutting-edge
-                            projects.
-                        </p>
-                    </div>
-                </motion.div>
-                <button className="mt-6">
-                    <a
-                        href={resume}
-                        download='resume'
-                        className="border-green-500 p-2 bg-green-500 text-xl font-semibold rounded-lg px-4 sm:mt-6  cursor"
-                    >
-                        My Resume
-                    </a>
-                </button>
-            </div>
-        </section>
-    );
-};
+          <img 
+            src={"portfolio-profile-pic.png"} 
+            alt="Profile" 
+            className="w-24 h-24 sm:w-32 sm:h-32 mx-auto md:mx-0 rounded-full shadow-lg mb-4 border-4 border-purple-500"
+          />
+          <h2 className="text-3xl sm:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-400">
+            About Me
+          </h2>
+          <p className="text-gray-300 font-serif text-base sm:text-lg mb-4">
+            I am a results-driven Full-Stack Developer with a strong foundation in modern web technologies, specializing in React, Node.js, and Express.js. Passionate about building intuitive, high-performance applications, I focus on delivering seamless user experiences through clean, scalable, and efficient code. With a keen eye for UI/UX design and a problem-solving mindset, I strive to develop innovative digital solutions that drive impact and enhance user engagement. Constantly exploring emerging technologies, I am committed to continuous learning and excellence in software development.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+            <motion.a 
+              href={ResumePDF} 
+              download="Shaqib_Resume.pdf"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              className="px-6 py-3 bg-gradient-to-r from-purple-500 to-blue-500 rounded-lg text-white font-semibold shadow-lg hover:shadow-xl transition"
+            >
+              Download Resume
+            </motion.a>
+            <motion.a 
+              href="#contact" 
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              className="px-6 py-3 border border-purple-500 rounded-lg text-purple-500 font-semibold hover:bg-purple-500 hover:text-white transition"
+            >
+              Contact Me
+            </motion.a>
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
 
 export default About;

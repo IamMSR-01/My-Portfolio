@@ -1,129 +1,128 @@
-import React from "react";
 import { motion } from "framer-motion";
-import { FaGithub } from "react-icons/fa";
+import { FiGithub, FiExternalLink } from "react-icons/fi";
+import { TbBrandNextjs, TbBrandReact, TbBrandNodejs, TbBrandJavascript, TbBrandCss3, TbBrandHtml5, TbBrandMongodb } from "react-icons/tb";
 
-// Add paths to the project images and app links
 const projects = [
   {
-    name: "World Atlas",
-    description:
-      "World Atlas is an interactive web app that provides detailed information about countries worldwide. As a beginner in frontend web development, I built this app to enhance my skills while creating a user-friendly platform for exploring global information.",
-    image: "world-atlas.png",
-    tech: "React.js, Tailwind CSS, Axios for API",
-    appLink: "https://world-atlas-ivory.vercel.app/",
-    githubLink: "https://github.com/IamMSR-01/World-Atlas",
+    title: "NEURAL CHAT",
+    description: "AI chatbot with emotion detection & voice synthesis.",
+    tech: ["Next.js", "GPT-4", "WebSockets"],
+    github: "#",
+    live: "#",
+    accent: "bg-purple-500",
+    image: "https://images.pexels.com/photos/31349148/pexels-photo-31349148/free-photo-of-vintage-black-and-white-donut-shop-exterior.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
   },
   {
-    name: "Spotify Clone",
-    description:
-      "A music streaming web app inspired by Spotify, featuring dynamic song listings through API integration. Focused on smooth navigation and an immersive listening experience.",
-    image: "spotify.png",
-    tech: "HTML, CSS, JavaScript",
-    appLink: "https://spotify-clone.example.com", 
-    githubLink: "https://github.com/IamMSR-01/Spotify-Clone",
+    title: "BLOCKSCAN",
+    description: "Real-time blockchain explorer with 3D visualization.",
+    tech: ["Three.js", "Node", "Ethereum"],
+    github: "#",
+    live: "#",
+    accent: "bg-cyan-400",
+    image: "https://images.pexels.com/photos/31349148/pexels-photo-31349148/free-photo-of-vintage-black-and-white-donut-shop-exterior.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
   },
-  {
-    name: "Real Time Currency Converter",
-    description:
-      "Real-time exchange rate updates with seamless functionality , Simple and intuitive user interface for smooth navigation and Accurate and reliable data fetched via API integrations.",
-    image: "currencyConverter.png",
-    tech: "React.js, Tailwind CSS, API",
-    appLink: "https://currency-converter-gamma-two-92.vercel.app/",
-    githubLink: "https://github.com/IamMSR-01/CurrencyConverter",
-  },
-  {
-    name: "E-Commerce",
-    description:
-      "An interactive e-commerce platform with features like product sliders, cart functionality, and dynamic APIs. Designed for a smooth shopping experience with responsive design and real-time updates.",
-    image: "ecommerce.png",
-    tech: "HTML, CSS, JavaScript",
-    appLink: "https://ecommerce-app.example.com", 
-    githubLink: "https://github.com/IamMSR-01?tab=repositories",
-  },
-  {
-    name: "Netflix Clone",
-    description:
-      "A pixel-perfect clone of Netflix’s landing page, showcasing a sleek design, responsive layout, and modern UI elements for an authentic look and feel.",
-    image: "netflix.png",
-    tech: "HTML, CSS",
-    appLink: "https://ecommerce-app.example.com",
-    githubLink: "https://github.com/IamMSR-01/Netflix-Landing-Page-Clone",
-  },
-  {
-    name: "Uber Clone",
-    description:
-      "A visually captivating Uber landing page clone, crafted with attention to detail. It replicates the clean design and responsive interface of the original, ensuring a professional presentation.",
-    image: "uber.png",
-    tech: "HTML, CSS",
-    appLink: "https://ecommerce-app.example.com",
-    githubLink: "https://github.com/IamMSR-01/Uber-Landing-Page-Clone",
-  }
-  
+];
+
+const techIcons = [
+  TbBrandNextjs,
+  TbBrandReact,
+  TbBrandNodejs,
+  TbBrandJavascript,
+  TbBrandCss3,
+  TbBrandHtml5,
+  TbBrandMongodb,
 ];
 
 const Projects = () => {
   return (
-    <section id="projects" className="py-12 bg-black text-white">
-      <div className="container mx-auto sm:px-6 md:px-12">
-        <motion.h2
-          className="text-6xl font-bold text-center mb-8 text-green-500"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1 }}
+    <section className="relative py-20 bg-black overflow-hidden">
+      {/* Floating Tech Logos (Background Animation) */}
+      {techIcons.map((Icon, index) => (
+        <motion.div
+          key={index}
+          className="absolute opacity-40"
+          initial={{ x: Math.random() * 100 - 50, y: Math.random() * 100 - 50 }}
+          animate={{ y: [0, 20, -20, 0], x: [0, 15, -15, 0] }}
+          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+          style={{
+            left: `${Math.random() * 100}%`,
+            top: `${Math.random() * 100}%`,
+          }}
         >
-          My Projects
-        </motion.h2>
+          <Icon className="text-[100px] text-blue-500 opacity-40" />
+        </motion.div>
+      ))}
 
-        <div className="w-[90%] m-auto mt-20 grid grid-cols-1 gap-10">
-          {projects.map((project, index) => (
-            <motion.div
-              key={index}
-              className="bg relative lg:flex items-center text-center p-4 bg-transparent shadow-xl rounded-lg transform hover:scale-105 transition-all duration-300 group gap-10"
-              whileHover={{ scale: 1.05 }}
-              transition={{ duration: 0.3 }}
-            >
-              {/* Project Image with hover 3D effect */}
-              <div
-                className="lg:w-[45%] bg-red-600 h-64 bg-cover bg-center mb-4 rounded-lg group-hover:transform group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 object-hover:scale"
-                style={{
-                  backgroundImage: `url(${project.image})`,
-                }}
-              ></div>
+      {/* Title with Glitch Effect */}
+      <motion.h2 
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 1.5 }}
+        className="text-center text-5xl md:text-7xl font-bold mb-20 text-white"
+      >
+        PROJECTS
+      </motion.h2>
 
-              {/* Project Title (Clickable link to app) */}
-              <div className="lg:w-[50%] ">
-                <a
-                  href={project.appLink}
-                  className="text-lg font-semibold text-green-500 mb-2 hover:underline"
-                  target="_blank"
-                  rel="noopener noreferrer"
+      {/* Holographic Card Stack */}
+      <div className="relative max-w-6xl mx-auto px-4">
+        {projects.map((project, i) => (
+          <motion.div
+            key={i}
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: i * 0.2, type: "spring" }}
+            viewport={{ once: true }}
+            className={`relative mb-16 p-0.5 rounded-xl ${project.accent} bg-opacity-40 backdrop-blur-lg`}
+            style={{ boxShadow: `0 0 20px ${project.accent}` }}
+          >
+            {/* Glass Card */}
+            <div className="relative bg-gray-900 bg-opacity-80 rounded-xl p-8 border border-gray-700 gap-20 md:flex overflow-hidden">
+              {/* Project Image */}
+              <img src={project.image} alt={project.title} className="w-[400px] h-48 object-cover rounded-lg mb-4" />
+
+              <div className="relative z-10">
+                {/* Project Title */}
+                <motion.h3 
+                  whileHover={{ textShadow: `0 0 10px ${project.accent}` }}
+                  className="text-2xl font-bold mb-3 text-white"
                 >
-                  {project.name}
-                </a>
+                  {project.title}
+                </motion.h3>
 
-                {/* Project Description */}
-                <p className="text-sm text-gray-400">{project.description}</p>
+                <p className="text-gray-300 mb-6">{project.description}</p>
 
-                {/* Project Tech Stack */}
-                <p className="text-sm text-blue-600 mt-5">{project.tech}</p>
+                {/* Tech Stack as Icons */}
+                <div className="flex gap-4 mb-6">
+                  {project.tech.map((tech) => (
+                    <div key={tech} className="flex items-center gap-2">
+                      {tech === "Next.js" && <TbBrandNextjs className="text-2xl text-white" />}
+                      {tech === "React" && <TbBrandReact className="text-2xl text-blue-600" />}
+                      <span className="text-sm text-gray-400">{tech}</span>
+                    </div>
+                  ))}
+                </div>
 
-                {/* GitHub Link */}
-                <div className="flex gap-4 items-center align-middle justify-center">
-                  <FaGithub className="mt-4" />
-                  <a
-                    href={project.githubLink}
-                    className="mt-4 text-blue-500 hover:underline items-center"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                {/* Links */}
+                <div className="flex gap-6">
+                  <motion.a
+                    whileHover={{ x: [0, -2, 2, 0] }}
+                    href={project.github}
+                    className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors"
                   >
-
-                    View GitHub
-                  </a>
+                    <FiGithub /> SOURCE
+                  </motion.a>
+                  <motion.a
+                    whileHover={{ x: [0, 2, -2, 0] }}
+                    href={project.live}
+                    className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors"
+                  >
+                    <FiExternalLink /> LIVE
+                  </motion.a>
                 </div>
               </div>
-            </motion.div>
-          ))}
-        </div>
+            </div>
+          </motion.div>
+        ))}
       </div>
     </section>
   );

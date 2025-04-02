@@ -24,7 +24,7 @@ function Header() {
               whileHover={{ scale: 1.1 }}
               className="flex gap-5 items-center"
             >
-              <img className="w-16" src="profile-pic.png" alt="Profile" />
+              <img className="w-14" src="profile-pic.png" alt="Profile" />
               <h1 className="hidden text-blue-700 sm:block">
                 Mohd Shaqib Raza
               </h1>

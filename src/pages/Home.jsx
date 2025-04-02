@@ -6,7 +6,6 @@ import Skills from './Skills';
 import Projects from './Projects';
 import Experience from './Experience';
 import Contact from './Contact';
-// import CustomCursor from "../components/CustomCursor.jsx"
 
 const roles = ["Full Stack Developer", "Backend Developer", "Frontend Developer", "Freelancer"];
 

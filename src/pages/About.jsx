@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import { motion } from "framer-motion";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
-import ResumePDF from "@/assets/Resume.pdf";
+import ResumePDF from "@/assets/Mohd Shaqib Raza Resume.pdf";
 // import CustomCursor from "../components/CustomCursor.jsx"
 
 function RotatingSphere() {
@@ -66,7 +66,7 @@ function About() {
               Download Resume
             </motion.a>
             <motion.a 
-              href="#contact" 
+              href="/contact" 
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
               className="px-6 py-3 border border-purple-500 rounded-lg text-purple-500 font-semibold hover:bg-purple-500 hover:text-white transition"

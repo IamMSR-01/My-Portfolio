@@ -19,17 +19,14 @@ function Header() {
       <div className="flex justify-between items-center text-white xl:w-[100%] md:m-auto gap-14 md:h-14 flex-wrap">
         {/* Logo Section */}
         <div className="text-white xl:w-[30%] flex items-center pl-5 font-bold text-2xl">
-          <NavLink to="/home">
             <motion.div
-              whileHover={{ scale: 1.1 }}
               className="flex gap-5 items-center"
             >
               <img className="w-14" src="profile-pic.png" alt="Profile" />
               <h1 className="hidden text-blue-700 sm:block">
-                Mohd Shaqib Raza
+                Mohd. Shaqib Raza
               </h1>
             </motion.div>
-          </NavLink>
         </div>
 
         {/* desktop nav bar */}

@@ -66,11 +66,11 @@ function Home() {
                 </div>
 
                 {/* Right Side Middle Image */}
-                <div className="hidden lg:block absolute right-0 top-1/2 transform -translate-y-1/2 sm:right-20">
+                <div className="hidden lg:block absolute right-0 top-1/2 transform -translate-y-1/2 sm:right-28">
                     <img 
-                        src="hero-image.jpg" 
+                        src="profile.png" 
                         alt="Shaqib" 
-                        className="w-24 sm:h-[420px]  sm:w-[450px] rounded-xl shadow-lg"
+                        className="sm:h-[420px]  sm:w-[350px] rounded-xl shadow-lg"
                     />
                 </div>
 
